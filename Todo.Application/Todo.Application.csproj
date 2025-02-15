@@ -19,11 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Todos\DeleteTodoById\" />
-    <Folder Include="Features\Todos\UpdateTodoById\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Todo.Domain\Todo.Domain.csproj" />
   </ItemGroup>
 
