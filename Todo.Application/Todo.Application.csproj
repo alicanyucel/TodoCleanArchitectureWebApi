@@ -8,16 +8,21 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Todo\CreateTodo\" />
-    <Folder Include="Features\Todo\DeleteTodoById\" />
-    <Folder Include="Features\Todo\GetAllTodos\" />
-    <Folder Include="Features\Todo\UpdateTodoById\" />
+    <Folder Include="Features\Todos\CreateTodo\" />
+    <Folder Include="Features\Todos\DeleteTodoById\" />
+    <Folder Include="Features\Todos\GetAllTodos\" />
+    <Folder Include="Features\Todos\UpdateTodoById\" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+using Todo.Domain.Models;
+using Todo.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+// context di servis register
+builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>(action =>
+{
+    action.UseSqlServer("Server=DESKTOP-L6NJT48\\SQLEXPRESS;" +
+        "Initial Catalog=ExamplesTodoDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;" +
+        "Application Intent=ReadWrite;Multi Subnet Failover=False");
+});
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
