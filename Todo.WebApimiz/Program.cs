@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Todo.Application.Features.Todos.CreateTodo;
 using Todo.Domain.Models;
 using Todo.Infrastructure.Repositories;
 
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // context di servis register
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+// mediatr kutuphanesinide register edelin
+builder.Services.AddMediatR(configuration =>
+          configuration.RegisterServicesFromAssembly(typeof(CreateTodoCommand).Assembly));
 builder.Services.AddDbContext<ApplicationDbContext>(action =>
 {
     action.UseSqlServer("Server=DESKTOP-L6NJT48\\SQLEXPRESS;" +
